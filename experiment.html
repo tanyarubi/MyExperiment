@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My experiment</title>
+		<script src="jspsych-6.3.1/jspsych.js"></script>
+		<script src="jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"></script>
+		<script src="jspsych-6.3.1/plugins/jspsych-html-slider-response.js"></script>
+		<script src="jspsych-6.3.1/plugins/jspsych-image-keyboard-response.js"></script>
+		<script src="jspsych-6.3.1/plugins/jspsych-preload.js"></script>
+		<script src="jspychophysics/jspsych-psychophysics.js"></script>
+		<link href="jspsych-6.3.1/css/jspsych.css" rel="stylesheet" type="text/css">
+		
+		
+    </head>
+    <body></body>
+	
+
+	
+	
+	<script>
+	//flow paramaters */ 
+	var Npractice = 1;
+	var Ntrials = 42;
+	var show_RT = 500; //milisec
+	
+	//pardigm parameters
+	var sigma = 20;
+	var sampleSize = 8;
+	var max_n = 100
+	var min_n = 0
+	var c = 30 //constant that bounds the scale for the samples' mean
+	
+	let ranNum = [];
+	let ranNumStr = [];
+	let backToArr = [];
+	/* create timeline */
+    var timeline = [];
+
+	// generate a random subject ID with 15 characters
+	var subject_id = jsPsych.randomization.randomID(4);
+
+	// pick a random condition for the subject at the start of the experiment
+	var condition_assignment = jsPsych.randomization.sampleWithoutReplacement(['conditionIndifFirst', 'conditionGroupFirst'], 1)[0];
+
+	// record the condition assignment in the jsPsych data
+	// this adds a property called 'subject' and a property called 'condition' to every trial
+	jsPsych.data.addProperties({
+	  subject: subject_id,
+	  condition: condition_assignment
+	});
+
+    /* define welcome message trial */
+    var welcome = {
+      type: "html-keyboard-response",
+      stimulus: "Welcome to the experiment. Press any key to begin."
+    };
+    timeline.push(welcome);
+
+    /* define instructions trials */
+    var instructions = {
+      type: "html-keyboard-response",
+      stimulus: `
+        <p>Thank you for taking part in our study!</p>
+		<p>In this study we will ask you to help us evaluate people’s average level of physical activity.</p>
+		<p>To do this, we had volunteers wear a fitness watch, which kept track of the number of minutes they engaged 
+		in aerobic physical activity (walking, jogging, dancing, intense house work) on a particular day. </p>
+
+        
+        <p>Press any key to begin.</p>
+       `,
+      post_trial_gap: 2000
+    };
+	timeline.push(instructions);
+	
+	
+
+    var instruct_indiv_first = {
+      type: "html-keyboard-response",
+      stimulus: `
+        <p>We will show you data from the fitness watch of <b>one individual</b>, who wore it for eight consecutive days.
+		<p>We will then ask you to evaluate the average of that individual.  
+        <p>Press any key to begin.</p>
+       `,
+      post_trial_gap: 2000
+    };
+	
+	var instruct_indiv_second = {
+      type: "html-keyboard-response",
+      stimulus: `
+        <p>We will now show you data from the fitness watch of <b>one individual</b>, who wore it for eight consecutive days.
+		<p>We will then ask you to evaluate the average of that individual.
+
+        <p>Press any key to begin.</p>
+       `,
+      post_trial_gap: 2000
+    };
+	
+	var instruct_group_first = {
+      type: "html-keyboard-response",
+      stimulus: `
+        <p>We will show you data from fitness watches of <b>eight different people</b>.
+		<p>We will then ask you to evaluate the average of that <b>group of people</b>.
+        <p>Press any key to begin.</p>
+       `,
+      post_trial_gap: 2000
+    };
+	
+	var instruct_group_second = {
+      type: "html-keyboard-response",
+      stimulus: `
+        <p>We will now show you data from fitness watches of <b>eight different people</b>.
+		<p>We will then ask you to evaluate the average of that <b>group of people</b>.
+        <p>Press any key to begin.</p>
+       `,
+      post_trial_gap: 2000
+    };
+	
+	/* test trials */
+    var test_stimuli = [
+      { stimulus: "genNum"},
+      { stimulus: "genNum"}
+    ];
+
+    var fixation = {
+      type: 'html-keyboard-response',
+      stimulus: '<div style="font-size:60px;">+</div>',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1000,
+    }
+	//create trial function
+	
+    var test_procedure = {
+      timeline: [instruct_indiv_first, fixation, trial, slider_indiv, instruct_group_second, fixation, trial, slider_group],
+    }
+	
+
+	
+	function genNum() {
+	for (let i = 0 ; i < sampleSize; i++) {
+	ranNum[i] = Math.floor(Math.random() * 101);
+	ranNumStr[i] = ranNum[i].toString();
+	}
+	return ranNum;
+	this.data.std= getStandardDeviation(this.sample)
+  
+	this.data.realMu = this.sample.reduce((a, b) => a + b, 0) / sampleSize;
+	}
+	
+	ranNum1 = Math.floor(Math.random() * 101);
+	ranNumStr1 = ranNum1.toString();
+	
+	
+	var text_object1 = {
+        obj_type: 'text',
+        content: ranNumStr1,
+        font: "22px 'Arial'",
+        text_color: 'black',
+        endX: 'center',
+        endY: 'center',
+        show_start_time: 500, // ms after the start of the trial
+		show_end_time: 1000
+    }
+	ranNum2 = Math.floor(Math.random() * 101);
+	ranNumStr2 = ranNum2.toString();	
+	
+		var text_object2 = {
+        obj_type: 'text',
+        content: ranNumStr2,
+        font: "22px 'Arial'",
+        text_color: 'black',
+        endX: 'center',
+        endY: 'center',
+        show_start_time: 1000, // ms after the start of the trial
+		show_end_time: 1500
+    }
+	
+	var trial = {
+        type: 'psychophysics',
+		prompt: 'press any key to proceed',
+        stimuli: [text_object1, text_object2],
+		background_color: 'white'
+    }
+	
+	
+
+	var slider_group = {
+    type: 'html-slider-response',
+	stimulus: [],
+    labels: ['0','100'],
+    prompt: `<p>What was this group's activity level?</p>`,
+    data: {num1: ranNum1, num2: ranNum2}
+	}
+
+	var slider_indiv = {
+    type: 'html-slider-response',
+	stimulus: [],
+    labels: ['0','100'],
+    prompt: `<p>What was this person's activity level?</p>`,
+    data: {num1: ranNum1, num2: ranNum2}
+	}
+	
+	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
+	
+	var node = {
+    timeline: [fixation, trial, slider_indiv,slider_group],
+    repetitions: 2
+	}
+	
+	timeline.push(instruct_indiv_first);
+	timeline.push(fixation);
+	timeline.push(trial);
+	timeline.push(slider_indiv);
+	timeline.push(instruct_group_second);
+	timeline.push(fixation);
+	timeline.push(trial);
+	timeline.push(slider_group);
+
+	/* start the experiment */
+    jsPsych.init({
+      timeline: timeline,
+	  on_finish: function() {
+        jsPsych.data.displayData('csv');
+		jsPsych.data.get().localSave('csv','mydata.csv');
+    }
+    });
+
+	
+    </script>
+</html>
