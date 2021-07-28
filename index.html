@@ -244,14 +244,19 @@ var trial = {
 	
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
 	
-	var node = {
-    timeline: [instructions,instruct_indiv_first, fixation,trial, slider_indiv,instruct_group_second,fixation,trial,slider_group],
+	timeline.push(instructions);
+	var node_indi_first = {
+    timeline: [instruct_indiv_first, fixation,trial, slider_indiv,instruct_group_second,fixation,trial,slider_group],
     repetitions: 3
 	}
-
+	var node_group_first = {
+    timeline: [instruct_indiv_first, fixation,trial, slider_indiv,instruct_group_second,fixation,trial,slider_group],
+    repetitions: 3
+	}
+	
 	/* start the experiment */
     jsPsych.init({
-      timeline: [node],
+      timeline: [node_indi_first],
 	  on_finish: function() {
         jsPsych.data.displayData('csv');
 		jsPsych.data.get().localSave('csv','mydata.csv');
