@@ -148,13 +148,10 @@
 	this.data.realMu = this.sample.reduce((a, b) => a + b, 0) / sampleSize;
 	}
 	
-	ranNum1 = ranNum[1];
-	ranNumStr1 = ranNum1.toString();
-	
-	
+
 	var text_object1 = {
         obj_type: 'text',
-        content: ranNumStr1,
+        content: test_stimuli[1],
         font: "22px 'Arial'",
         text_color: 'black',
         endX: 'center',
@@ -162,12 +159,10 @@
         show_start_time: 500, // ms after the start of the trial
 		show_end_time: 1000
     }
-	ranNum2 = ranNum[2];
-	ranNumStr2 = ranNum2.toString();	
-	
+
 		var text_object2 = {
         obj_type: 'text',
-        content: ranNumStr2,
+        content: test_stimuli[2],
         font: "22px 'Arial'",
         text_color: 'black',
         endX: 'center',
@@ -229,3 +224,9 @@
 	
     </script>
 </html>
+//	ranNum1 = ranNum[1];
+//	ranNumStr1 = ranNum1.toString();
+	
+//	ranNum2 = ranNum[2];
+//	ranNumStr2 = ranNum2.toString();	
+		
