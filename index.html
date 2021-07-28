@@ -244,7 +244,7 @@ var trial = {
 	
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
 	
-	timeline.push(instructions);
+	node_indi_first.push();
 	var node_indi_first = {
     timeline: [instruct_indiv_first, fixation,trial, slider_indiv,instruct_group_second,fixation,trial,slider_group],
     repetitions: 3
