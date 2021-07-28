@@ -117,14 +117,8 @@
 	
 	/* test trials */
     var test_stimuli = [
-      { stimulus: "genNum"},
-      { stimulus: "genNum"},
-	{ stimulus: "genNum"},
-	    { stimulus: "genNum"},
-	    { stimulus: "genNum"},
-	    { stimulus: "genNum"},
-	    { stimulus: "genNum"},
-	    { stimulus: "genNum"}
+      { stimulus: genNum},
+      { stimulus: genNum},
     ];
 
     var fixation = {
@@ -179,32 +173,7 @@
         show_start_time: 1000, // ms after the start of the trial
 		show_end_time: 1500
     }
-	ranNum3 = ranNum[3];
-	ranNumStr3 = ranNum3.toString();	
-	
-		var text_object3 = {
-        obj_type: 'text',
-        content: ranNumStr3,
-        font: "22px 'Arial'",
-        text_color: 'black',
-        endX: 'center',
-        endY: 'center',
-        show_start_time: 1000, // ms after the start of the trial
-		show_end_time: 1500
-    }
-		ranNum4 = ranNum[4];
-	ranNumStr4 = ranNum4.toString();	
-	
-		var text_object4 = {
-        obj_type: 'text',
-        content: ranNumStr4,
-        font: "22px 'Arial'",
-        text_color: 'black',
-        endX: 'center',
-        endY: 'center',
-        show_start_time: 1000, // ms after the start of the trial
-		show_end_time: 1500
-    }
+
 	var trial = {
         type: 'psychophysics',
 		prompt: 'press any key to proceed',
