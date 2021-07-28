@@ -157,11 +157,22 @@ let textRanNum = ranNumAr.map(String)
         show_start_time: 1000, // ms after the start of the trial
 		show_end_time: 1500
     }
+		
+		var text_object3 = {
+        obj_type: 'text',
+        content: textRanNum[3],
+        font: "22px 'Arial'",
+        text_color: 'black',
+        endX: 'center',
+        endY: 'center',
+        show_start_time: 1000, // ms after the start of the trial
+		show_end_time: 1500
+    }
 
 	var trial = {
         type: 'psychophysics',
 		prompt: 'press any key to proceed',
-        stimuli: [text_object1, text_object2],
+        stimuli: [text_object1, text_object2, text_object3],
 		background_color: 'white'
     }
 	
@@ -180,7 +191,7 @@ let textRanNum = ranNumAr.map(String)
 	stimulus: [],
     labels: ['0','100'],
     prompt: `<p>What was this person's activity level?</p>`,
-    data: {num1: text_object1, num2: text_object2}
+    data: {num1: text_object1, num2: text_object2, num3: text_object3}
 	}
 	
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
