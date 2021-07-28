@@ -257,7 +257,7 @@ let textRanNum = ranNumAr.map(String)
 
 	/* start the experiment */
     jsPsych.init({
-      timeline: timeline,
+      timeline: [node],
 	  on_finish: function() {
         jsPsych.data.displayData('csv');
 		jsPsych.data.get().localSave('csv','mydata.csv');
