@@ -127,11 +127,6 @@ let textRanNum = ranNumAr.map(String)
       trial_duration: 1000,
     }
 	//create trial function
-	
-    var test_procedure = {
-      timeline: [instruct_indiv_first, fixation, trial, slider_indiv, instruct_group_second, fixation, trial, slider_group],
-    }
-	
 
 	
 	
@@ -223,14 +218,7 @@ let textRanNum = ranNumAr.map(String)
 		show_end_time: 4500
     }
 
-	var trial = {
-        type: 'psychophysics',
-		prompt: 'press any key to proceed',
-        stimuli: [text_object1, text_object2, text_object3, text_object4, text_object5, text_object6, text_object7, text_object8],
-		background_color: 'white'
-    }
-	
-	
+
 
 	var slider_group = {
     type: 'html-slider-response',
@@ -251,7 +239,7 @@ let textRanNum = ranNumAr.map(String)
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
 	
 	var node = {
-    timeline: [instruct_indiv_first, fixation, trial, slider_indiv,instruct_group_second,slider_group],
+    timeline: [instruct_indiv_first, fixation, slider_indiv,instruct_group_second,slider_group],
     repetitions: 3
 	}
 
