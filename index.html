@@ -152,7 +152,7 @@
 	this.data.realMu = this.sample.reduce((a, b) => a + b, 0) / sampleSize;
 	}
 	
-	ranNum1 = test_stimuli[1];
+	ranNum1 = ranNum[1];
 	ranNumStr1 = ranNum1.toString();
 	
 	
@@ -166,7 +166,7 @@
         show_start_time: 500, // ms after the start of the trial
 		show_end_time: 1000
     }
-	ranNum2 = test_stimuli[2];
+	ranNum2 = ranNum[2];
 	ranNumStr2 = ranNum2.toString();	
 	
 		var text_object2 = {
@@ -179,7 +179,7 @@
         show_start_time: 1000, // ms after the start of the trial
 		show_end_time: 1500
     }
-	ranNum3 = test_stimuli[3];
+	ranNum3 = ranNum[3];
 	ranNumStr3 = ranNum3.toString();	
 	
 		var text_object3 = {
@@ -192,7 +192,7 @@
         show_start_time: 1000, // ms after the start of the trial
 		show_end_time: 1500
     }
-		ranNum4 = test_stimuli[4];
+		ranNum4 = ranNum[4];
 	ranNumStr4 = ranNum4.toString();	
 	
 		var text_object4 = {
@@ -208,7 +208,7 @@
 	var trial = {
         type: 'psychophysics',
 		prompt: 'press any key to proceed',
-        stimuli: [text_object1, text_object2],
+        stimuli: [text_object1, text_object2, text_object3, text_object4],
 		background_color: 'white'
     }
 	
