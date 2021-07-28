@@ -239,7 +239,7 @@ let textRanNum = ranNumAr.map(String)
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
 	
 	var node = {
-    timeline: [instruct_indiv_first, fixation, slider_indiv,instruct_group_second,slider_group],
+    timeline: [instructions,instruct_indiv_first, fixation, slider_indiv,instruct_group_second,slider_group],
     repetitions: 3
 	}
 
