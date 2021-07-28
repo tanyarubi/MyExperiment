@@ -166,7 +166,7 @@
         show_start_time: 500, // ms after the start of the trial
 		show_end_time: 1000
     }
-	ranNum2 = Math.floor(Math.random() * 101);
+	ranNum2 = test_stimuli[2];
 	ranNumStr2 = ranNum2.toString();	
 	
 		var text_object2 = {
@@ -179,7 +179,32 @@
         show_start_time: 1000, // ms after the start of the trial
 		show_end_time: 1500
     }
+	ranNum3 = test_stimuli[3];
+	ranNumStr3 = ranNum3.toString();	
 	
+		var text_object3 = {
+        obj_type: 'text',
+        content: ranNumStr3,
+        font: "22px 'Arial'",
+        text_color: 'black',
+        endX: 'center',
+        endY: 'center',
+        show_start_time: 1000, // ms after the start of the trial
+		show_end_time: 1500
+    }
+		ranNum4 = test_stimuli[4];
+	ranNumStr4 = ranNum4.toString();	
+	
+		var text_object4 = {
+        obj_type: 'text',
+        content: ranNumStr4,
+        font: "22px 'Arial'",
+        text_color: 'black',
+        endX: 'center',
+        endY: 'center',
+        show_start_time: 1000, // ms after the start of the trial
+		show_end_time: 1500
+    }
 	var trial = {
         type: 'psychophysics',
 		prompt: 'press any key to proceed',
