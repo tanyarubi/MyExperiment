@@ -254,15 +254,6 @@ let textRanNum = ranNumAr.map(String)
     timeline: [fixation, trial, slider_indiv,slider_group],
     repetitions: 3
 	}
-	
-	timeline.push(instruct_indiv_first);
-	timeline.push(fixation);
-	timeline.push(trial);
-	timeline.push(slider_indiv);
-	timeline.push(instruct_group_second);
-	timeline.push(fixation);
-	timeline.push(trial);
-	timeline.push(slider_group);
 
 	/* start the experiment */
     jsPsych.init({
