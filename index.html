@@ -117,9 +117,10 @@
 }
 	
 
-
-	var ranNumAr = [...Array(8)].map(e=>~~(Math.random()*101));
-    var fixation = {
+var ranNumAr = [...Array(8)].map(e=>~~(Math.random()*101));
+let textRanNum = ranNumAr.toString();
+		
+	var fixation = {
       type: 'html-keyboard-response',
       stimulus: '<div style="font-size:60px;">+</div>',
       choices: jsPsych.NO_KEYS,
@@ -137,7 +138,7 @@
 
 	var text_object1 = {
         obj_type: 'text',
-        content: ranNumAr[1],
+        content: textRanNum[1],
         font: "22px 'Arial'",
         text_color: 'black',
         endX: 'center',
@@ -148,7 +149,7 @@
 
 		var text_object2 = {
         obj_type: 'text',
-        content: ranNumAr[2],
+        content: textRanNum[2],
         font: "22px 'Arial'",
         text_color: 'black',
         endX: 'center',
