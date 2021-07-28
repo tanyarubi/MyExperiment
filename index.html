@@ -168,11 +168,65 @@ let textRanNum = ranNumAr.map(String)
         show_start_time: 1500, // ms after the start of the trial
 		show_end_time: 2000
     }
+		
+		var text_object4 = {
+        obj_type: 'text',
+        content: textRanNum[4],
+        font: "22px 'Arial'",
+        text_color: 'black',
+        endX: 'center',
+        endY: 'center',
+        show_start_time: 2000, // ms after the start of the trial
+		show_end_time: 2500
+    }
+		var text_object5 = {
+        obj_type: 'text',
+        content: textRanNum[5],
+        font: "22px 'Arial'",
+        text_color: 'black',
+        endX: 'center',
+        endY: 'center',
+        show_start_time: 2500, // ms after the start of the trial
+		show_end_time: 3000
+    }
+		
+		var text_object6 = {
+        obj_type: 'text',
+        content: textRanNum[6],
+        font: "22px 'Arial'",
+        text_color: 'black',
+        endX: 'center',
+        endY: 'center',
+        show_start_time: 3000, // ms after the start of the trial
+		show_end_time: 3500
+    }
+		
+		var text_object7 = {
+        obj_type: 'text',
+        content: textRanNum[7],
+        font: "22px 'Arial'",
+        text_color: 'black',
+        endX: 'center',
+        endY: 'center',
+        show_start_time: 3500, // ms after the start of the trial
+		show_end_time: 4000
+    }
+		
+		var text_object8 = {
+        obj_type: 'text',
+        content: textRanNum[8],
+        font: "22px 'Arial'",
+        text_color: 'black',
+        endX: 'center',
+        endY: 'center',
+        show_start_time: 4000, // ms after the start of the trial
+		show_end_time: 4500
+    }
 
 	var trial = {
         type: 'psychophysics',
 		prompt: 'press any key to proceed',
-        stimuli: [text_object1, text_object2, text_object3],
+        stimuli: [text_object1, text_object2, text_object3, text_object4, text_object5, text_object6, text_object7, text_object8],
 		background_color: 'white'
     }
 	
@@ -183,7 +237,7 @@ let textRanNum = ranNumAr.map(String)
 	stimulus: [],
     labels: ['0','100'],
     prompt: `<p>What was this group's activity level?</p>`,
-    data: {num1: text_object1, num2: text_object2, num3: text_object3}
+    data: {num1: text_object1, num2: text_object2, num3: text_object3, num4: text_object4, num5: text_object5, num6: text_object6, num7: text_object7, num8: text_object8}
 	}
 
 	var slider_indiv = {
@@ -191,7 +245,7 @@ let textRanNum = ranNumAr.map(String)
 	stimulus: [],
     labels: ['0','100'],
     prompt: `<p>What was this person's activity level?</p>`,
-    data: {num1: text_object1, num2: text_object2, num3: text_object3}
+    data: {num1: text_object1, num2: text_object2, num3: text_object3, num4: text_object4, num5: text_object5, num6: text_object6, num7: text_object7, num8: text_object8}
 	}
 	
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
