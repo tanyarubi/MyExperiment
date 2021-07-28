@@ -39,7 +39,7 @@
 
 	// generate a random subject ID with 15 characters
 	var subject_id = jsPsych.randomization.randomID(4);
-
+	
 	// pick a random condition for the subject at the start of the experiment
 	var condition_assignment = jsPsych.randomization.sampleWithoutReplacement(['conditionIndifFirst', 'conditionGroupFirst'], 1)[0];
 
@@ -119,10 +119,10 @@
 
 	/* test trials */
     var test_stimuli = [
-      { stimulus: ranNum[1]},
-      { stimulus: ranNum[2]},
+      { stimulus: genNum},
+      { stimulus: genNum},
     ];
-
+	var ranNumAr = [...Array(8)].map(e=>~~(Math.random()*101));
     var fixation = {
       type: 'html-keyboard-response',
       stimulus: '<div style="font-size:60px;">+</div>',
@@ -137,12 +137,7 @@
 	
 
 	
-	function genNum() {
-	for (let i = 0 ; i < sampleSize; i++) {
-	ranNum[i] = Math.floor(Math.random() * 101);
-	ranNumStr[i] = ranNum[i].toString();
-	}
-	return ranNumStr;
+	
 	this.data.std= getStandardDeviation(this.sample)
   
 	this.data.realMu = this.sample.reduce((a, b) => a + b, 0) / sampleSize;
@@ -151,7 +146,7 @@
 
 	var text_object1 = {
         obj_type: 'text',
-        content: test_stimuli[1],
+        content: ranNumAr[1],
         font: "22px 'Arial'",
         text_color: 'black',
         endX: 'center',
@@ -162,7 +157,7 @@
 
 		var text_object2 = {
         obj_type: 'text',
-        content: test_stimuli[2],
+        content: ranNumAr[2],
         font: "22px 'Arial'",
         text_color: 'black',
         endX: 'center',
