@@ -106,19 +106,21 @@
     };
 	
 	var instruct_group_second = {
-      type: "html-keyboard-response",
-      stimulus: `
+      type: "instructions",
+       pages: [
+        '
         <p>We will now show you data from fitness watches of <b>eight different people</b>.
 		<p>We will then ask you to evaluate the average of that <b>group of people</b>.
         <p>Press any key to begin.</p>
-       `,
-      post_trial_gap: 2000
+       '],
+      show_clickable_nav: true
     };
 	
+}
 	/* test trials */
     var test_stimuli = [
-      { stimulus: genNum},
-      { stimulus: genNum},
+      { stimulus: ranNum[1]},
+      { stimulus: ranNum[2]},
     ];
 
     var fixation = {
@@ -177,7 +179,7 @@
 	var trial = {
         type: 'psychophysics',
 		prompt: 'press any key to proceed',
-        stimuli: [text_object1, text_object2, text_object3, text_object4],
+        stimuli: [text_object1, text_object2],
 		background_color: 'white'
     }
 	
