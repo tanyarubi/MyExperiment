@@ -120,7 +120,7 @@
 
 var ranNumAr = [...Array(8)].map(e=>~~(Math.random()*101));
 let textRanNum = ranNumAr.map(String)
-		
+var sequence = []		
 	var fixation = {
       type: 'html-keyboard-response',
       stimulus: '<div style="font-size:60px;">+</div>',
@@ -130,10 +130,17 @@ let textRanNum = ranNumAr.map(String)
 	//create trial function
 
       var trial_test = {
-      type: 'animation',
+       type: 'html-keyboard-response',
       stimulus: function(){
-    	return jsPsych.randomization.sampleWithoutReplacement([...Array(8)].map(e=>~~(Math.random()*101)), 2);
-  },
+	if (sequence.length < 8){
+		var number = jsPsych.randomization.sampleWithoutReplacement([...Array(8)].map(e=>~~(Math.random()*101)), 1)[0]
+		}
+	sequence.push(number)
+	return '<div style="font-size:60px;">+number+</div>'
+	
+      },
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1000
     }
 	
 
