@@ -124,13 +124,16 @@ let textRanNum = ranNumAr.map(String)
       type: 'html-keyboard-response',
       stimulus: '<div style="font-size:60px;">+</div>',
       choices: jsPsych.NO_KEYS,
-      trial_duration: function (){
-      return jsPsych.randomization.sampleWithoutReplacement(ranNumAr)
-      }
+      trial_duration: 1000
     }
 	//create trial function
 
-	
+      var trial_test = {
+      type: 'html-keyboard-response',
+      stimulus: [...Array(8)].map(e=>~~(Math.random()*101)),
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 1000
+    }
 	
 
 	var text_object1 = {
@@ -249,11 +252,11 @@ var trial = {
 	timeline.push(instructions);
 		
 	var node_indi_first = {
-    timeline: [instruct_indiv_first, fixation, slider_indiv,instruct_group_second,fixation,slider_group],
+    timeline: [instruct_indiv_first, fixation, trial_test,instruct_group_second,fixation,slider_group],
     repetitions: 3
 	}
 	var node_group_first = {
-    timeline: [instruct_indiv_first, fixation, slider_indiv,instruct_group_second,fixation,slider_group],
+    timeline: [instruct_indiv_first, fixation, trial_test,instruct_group_second,fixation,slider_group],
     repetitions: 3
 	}
 	
