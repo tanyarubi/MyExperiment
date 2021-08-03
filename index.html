@@ -133,7 +133,7 @@ var sequence = []
        type: 'html-keyboard-response',
       stimulus: function(){
 	if (sequence.length < 8){
-		var number = jsPsych.randomization.sampleWithoutReplacement([...Array(8)].map(e=>~~(Math.random()*101)), 1)[0]
+		var number = Math.random()*101)
 		}
 	sequence.push(number)
 	return '<div style="font-size:60px;">'+number+'</div>'
