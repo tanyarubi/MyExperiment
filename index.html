@@ -228,7 +228,7 @@ var trial = {
 
 	var slider_group = {
     type: 'html-slider-response',
-	stimulus: [text_object1, text_object2, text_object3, text_object4, text_object5, text_object6, text_object7, text_object8],
+	stimulus: var ranNumAr = [...Array(8)].map(e=>~~(Math.random()*101));,
     labels: ['0','100'],
     prompt: `<p>What was this group's activity level?</p>`,
     data: {num1: text_object1, num2: text_object2, num3: text_object3, num4: text_object4, num5: text_object5, num6: text_object6, num7: text_object7, num8: text_object8}
@@ -236,7 +236,7 @@ var trial = {
 
 	var slider_indiv = {
     type: 'html-slider-response',
-	stimulus: [text_object1, text_object2, text_object3, text_object4, text_object5, text_object6, text_object7, text_object8],
+	stimulus: var ranNumAr = [...Array(8)].map(e=>~~(Math.random()*101));,
     labels: ['0','100'],
     prompt: `<p>What was this person's activity level?</p>`,
     data: {num1: text_object1, num2: text_object2, num3: text_object3, num4: text_object4, num5: text_object5, num6: text_object6, num7: text_object7, num8: text_object8}
