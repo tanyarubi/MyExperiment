@@ -8,6 +8,7 @@
 		<script src="jspsych-6.3.1/plugins/jspsych-html-slider-response.js"></script>
 		<script src="jspsych-6.3.1/plugins/jspsych-image-keyboard-response.js"></script>
 		<script src="jspsych-6.3.1/plugins/jspsych-preload.js"></script>
+	        <script src="jspsych-6.3.1/plugins/jspsych-animation.js"></script>
 		<script src="jspychophysics/jspsych-psychophysics.js"></script>
 		<link href="jspsych-6.3.1/css/jspsych.css" rel="stylesheet" type="text/css">
 		
@@ -129,7 +130,7 @@ let textRanNum = ranNumAr.map(String)
 	//create trial function
 
       var trial_test = {
-      type: 'html-keyboard-response',
+      type: 'animation',
       stimulus: function(){
     	return jsPsych.randomization.sampleWithoutReplacement([...Array(8)].map(e=>~~(Math.random()*101)), 2);
   },
