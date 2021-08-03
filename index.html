@@ -130,7 +130,9 @@ let textRanNum = ranNumAr.map(String)
 
       var trial_test = {
       type: 'html-keyboard-response',
-      stimulus: [...Array(8)].map(e=>~~(Math.random()*101)),
+      stimulus: function(){
+    	return jsPsych.randomization.sampleWithoutReplacement([...Array(8)].map(e=>~~(Math.random()*101)), 1)[0];
+  },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     }
