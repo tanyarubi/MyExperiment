@@ -37,7 +37,8 @@
 	let backToArr = [];
 	/* create timeline */
     	var timeline = [];
-
+	var trial_count = 0;
+		
 	// generate a random subject ID with 15 characters
 	var subject_id = jsPsych.randomization.randomID(4);
 	
@@ -145,7 +146,7 @@ var sequence = []
         },
         {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[trial_count,0],
+            stimulus: ranNumAr[trial_count][0],
             choices: jsPsych.NO_KEYS,
             trial_duration: 1000
         },
@@ -222,7 +223,7 @@ var sequence = []
 	
 	timeline.push(slider_indiv);
 		
-	var trial_count = 0;
+
 	
 	
 	
