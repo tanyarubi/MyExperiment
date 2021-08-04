@@ -22,7 +22,7 @@
 	<script>
 	//flow paramaters */ 
 	var Npractice = 1;
-	var Ntrials = 42;
+	var Ntrials = 2;
 	var show_RT = 500; //milisec
 	
 	//pardigm parameters
@@ -119,8 +119,10 @@
 }
 	timeline.push(instruct_group_second)
 
-
-let textRanNum = ranNumAr.map(String)
+for (i=0; i<Ntrials; i++){
+		ranNumAr[i] = [...Array(8)].map(e=>~~(Math.random()*101));}
+	
+	
 var sequence = []		
 	var fixation = {
       type: 'html-keyboard-response',
@@ -131,18 +133,17 @@ var sequence = []
 	//create trial function
 	
 		
-	for (i=0; i<8; i++){
-		ranNumAr = [...Array(8)].map(e=>~~(Math.random()*101));
+	
 		var test_trial = {
 		type: 'html-keyboard-response',
-		stimulus: ranNumAr[i],
+		stimulus: ranNumAr[i,0],
 		choices: jsPsych.NO_KEYS,
       		trial_duration: 1000
 		};
 
 	timeline.push(test_trial)
 
-	} //ends the for loop
+	 //ends the for loop
 		
 	var slider_group = {
     type: 'html-slider-response',
