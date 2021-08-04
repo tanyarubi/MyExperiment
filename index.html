@@ -135,7 +135,7 @@ var sequence = []
 		
 	
 
-		var test_trial = {
+	var test_trial = {
     timeline: [
         {
             type: 'html-keyboard-response',
@@ -145,29 +145,52 @@ var sequence = []
         },
         {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[0][0],
+            stimulus: ranNumAr[trial_count][0],
             choices: jsPsych.NO_KEYS,
             trial_duration: 1000
         },
 	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[0][1],
+            stimulus: ranNumAr[trial_count][1],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
-        {
-            type: 'html-keyboard-response',
-            stimulus: ranNumAr[1][0],
-            choices: jsPsych.NO_KEYS,
-            trial_duration: 1000
-        },
 	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[1][1],
+            stimulus: ranNumAr[trial_count][2],
             choices: jsPsych.NO_KEYS,
-            trial_duration: 1000
-        }   
-        
+		trial_duration: 1000
+	     },
+	    	      {
+            type: 'html-keyboard-response',
+            stimulus: ranNumAr[trial_count][3],
+            choices: jsPsych.NO_KEYS,
+		trial_duration: 1000
+	     },
+	    	      {
+            type: 'html-keyboard-response',
+            stimulus: ranNumAr[trial_count][4],
+            choices: jsPsych.NO_KEYS,
+		trial_duration: 1000
+	     },
+	    	      {
+            type: 'html-keyboard-response',
+            stimulus: ranNumAr[trial_count][5],
+            choices: jsPsych.NO_KEYS,
+		trial_duration: 1000
+	     },
+	    	      {
+            type: 'html-keyboard-response',
+            stimulus: ranNumAr[trial_count][6],
+            choices: jsPsych.NO_KEYS,
+		trial_duration: 1000
+	     },
+	    	      {
+            type: 'html-keyboard-response',
+            stimulus: ranNumAr[trial_count][7],
+            choices: jsPsych.NO_KEYS,
+		trial_duration: 1000
+	     }
     ],
     timeline_variables: [
         { num: 'ranNumAr[i,0]' },
@@ -199,6 +222,8 @@ var sequence = []
 	
 	timeline.push(slider_indiv);
 		
+	var trial_count = 0;
+	
 	
 	
 	/* start the experiment */
