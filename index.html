@@ -134,13 +134,34 @@ var sequence = []
 	
 		
 	
-		var test_trial = {
-		type: 'html-keyboard-response',
-		stimulus: ranNumAr[i,0],
-		choices: jsPsych.NO_KEYS,
-      		trial_duration: 1000
-		};
 
+		var test_trial = {
+    timeline: [
+        {
+            type: 'html-keyboard-response',
+            stimulus: '+',
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 500
+        },
+        {
+            type: 'html-keyboard-response',
+            stimulus: ranNumAr[i,0],
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 2500
+        }
+	      {
+            type: 'html-keyboard-response',
+            stimulus: ranNumAr[i,1],
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 2500
+        }
+    ],
+    timeline_variables: [
+        { num: 'ranNumAr[i,0]' },
+        { num: 'ranNumAr[i,1]' },
+
+    ]
+}
 	timeline.push(test_trial)
 
 	 //ends the for loop
