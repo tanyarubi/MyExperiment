@@ -86,6 +86,7 @@
       post_trial_gap: 2000
     };
 	timeline.push(instruct_indiv_first)
+		
 	var instruct_indiv_second = {
       type: "html-keyboard-response",
       stimulus: `
@@ -116,7 +117,7 @@
        ],
       show_clickable_nav: true
 }
-	
+	timeline.push(instruct_group_second)
 
 
 let textRanNum = ranNumAr.map(String)
@@ -163,8 +164,8 @@ var sequence = []
 	
 	timeline.push(slider_indiv);
 		
-
-	
+	timeline.push(test_trial)
+	timeline.push(slider_group)
 	/* start the experiment */
     jsPsych.init({
       timeline: timeline,
