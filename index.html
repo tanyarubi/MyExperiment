@@ -118,7 +118,7 @@
 }
 	
 
-var ranNumAr = [...Array(8)].map(e=>~~(Math.random()*101));
+
 let textRanNum = ranNumAr.map(String)
 var sequence = []		
 	var fixation = {
@@ -131,7 +131,7 @@ var sequence = []
 	
 		
 	for (i=0; i<8; i++){
-
+		var ranNumAr = [...Array(8)].map(e=>~~(Math.random()*101));
 		var test_trial = {
 		type: 'html-keyboard-response',
 		stimulus: ranNumAr[i],
