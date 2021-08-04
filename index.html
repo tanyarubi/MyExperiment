@@ -129,7 +129,7 @@ var sequence = []
     }
 	//create trial function
 
-      var show_num1 = {
+      var show_num = {
        type: 'html-keyboard-response',
       stimulus: function(){
 	if (sequence.length < 8){
@@ -143,7 +143,15 @@ var sequence = []
       trial_duration: 1000
     }
 	
-
+	var nums = {
+		timeline: [show_num],
+		sample: {
+			type: 'withoutReplacement',
+			size: 8
+			
+		}
+	}
+	timeline.push(nums);
 	var slider_group = {
     type: 'html-slider-response',
 	stimulus: [],
@@ -165,11 +173,11 @@ var sequence = []
 	timeline.push(instructions);
 		
 	var node_indi_first = {
-    timeline: [instruct_indiv_first, fixation, trial_test,instruct_group_second,fixation,trial_test,slider_group],
+    timeline: [instruct_indiv_first, fixation, nums,instruct_group_second,fixation,trial_test,slider_group],
     repetitions: 3
 	}
 	var node_group_first = {
-    timeline: [instruct_indiv_first, fixation, trial_test,instruct_group_second,fixation,trial_test,slider_group],
+    timeline: [instruct_indiv_first, fixation, nums,instruct_group_second,fixation,trial_test,slider_group],
     repetitions: 2
 	}
 	
