@@ -147,14 +147,27 @@ var sequence = []
             type: 'html-keyboard-response',
             stimulus: ranNumAr[0][0],
             choices: jsPsych.NO_KEYS,
-            trial_duration: 2500
+            trial_duration: 1000
         },
 	      {
             type: 'html-keyboard-response',
             stimulus: ranNumAr[0][1],
             choices: jsPsych.NO_KEYS,
-            trial_duration: 2500
-        }
+		trial_duration: 1000
+	     },
+        {
+            type: 'html-keyboard-response',
+            stimulus: ranNumAr[1][0],
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 1000
+        },
+	      {
+            type: 'html-keyboard-response',
+            stimulus: ranNumAr[1][1],
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 1000
+        }   
+        
     ],
     timeline_variables: [
         { num: 'ranNumAr[i,0]' },
@@ -186,8 +199,8 @@ var sequence = []
 	
 	timeline.push(slider_indiv);
 		
-	timeline.push(test_trial)
-	timeline.push(slider_group)
+	
+	
 	/* start the experiment */
     jsPsych.init({
       timeline: timeline,
