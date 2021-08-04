@@ -36,7 +36,7 @@
 	let ranNumStr = [];
 	let backToArr = [];
 	/* create timeline */
-    var timeline = [];
+    	var timeline = [];
 
 	// generate a random subject ID with 15 characters
 	var subject_id = jsPsych.randomization.randomID(4);
@@ -85,7 +85,7 @@
        `,
       post_trial_gap: 2000
     };
-	
+	timeline.push(instruct_indiv_first)
 	var instruct_indiv_second = {
       type: "html-keyboard-response",
       stimulus: `
@@ -128,30 +128,21 @@ var sequence = []
       trial_duration: 1000
     }
 	//create trial function
+	
+		
+	for (i=0; i<8; i++){
 
-      var show_num = {
-       type: 'html-keyboard-response',
-      stimulus: function(){
-	if (sequence.length < 8){
-		var number = [...Array(8)].map(e=>~~(Math.random()*101));
-		}
-	sequence.push(number)
-	return '<div style="font-size:60px;">'+number+'</div>'
-	
-      },
-      choices: jsPsych.NO_KEYS,
-      trial_duration: 1000
-    }
-	
-	var nums = {
-		timeline: [show_num],
-		sample: {
-			type: 'without-replacement',
-			size: 8
-			
-		}
-	}
-	timeline.push(nums);
+		var test_trial = {
+		type: 'html-keyboard-response',
+		stimulus: ranNumAr[i],
+		choices: jsPsych.NO_KEYS,
+      		trial_duration: 1000
+		};
+
+	timeline.push(test_trial)
+
+	} //ends the for loop
+		
 	var slider_group = {
     type: 'html-slider-response',
 	stimulus: [],
@@ -170,20 +161,13 @@ var sequence = []
 	
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
 	
-	timeline.push(instructions);
+	timeline.push(slider_indiv);
 		
-	var node_indi_first = {
-    timeline: [instruct_indiv_first, fixation, nums,instruct_group_second,fixation,nums,slider_group],
-    repetitions: 3
-	}
-	var node_group_first = {
-    timeline: [instruct_indiv_first, fixation, nums,instruct_group_second,fixation,nums,slider_group],
-    repetitions: 2
-	}
+
 	
 	/* start the experiment */
     jsPsych.init({
-      timeline: [node_indi_first],
+      timeline: timeline,
 	  on_finish: function() {
         jsPsych.data.displayData('csv');
 		jsPsych.data.get().localSave('csv','mydata.csv');
