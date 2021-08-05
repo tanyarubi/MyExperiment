@@ -191,7 +191,7 @@ var sequence = []
             stimulus: ranNumAr[trial_count][7],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
-	     }, {trial_count++},
+	     }, {counter_increase},
     ],
     timeline_variables: [
         { num: 'ranNumAr[i,0]' },
@@ -200,7 +200,9 @@ var sequence = []
     ]
 }
 	timeline.push(test_trial)
-
+	var counter_increase = {
+	function() {return trial_count++}	
+	}
 	 //ends the for loop
 		
 	var slider_group = {
