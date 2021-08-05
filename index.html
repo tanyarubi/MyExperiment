@@ -34,7 +34,7 @@
 
 	// create timeline:
 	var timeline = [];
-	
+	let varRanNum = [];
 		
 	// generate a random subject ID with 15 characters
 	var subject_id = jsPsych.randomization.randomID(4);
@@ -139,7 +139,7 @@
 	
 	
 for (var i = 0; i < Ntrials; i++) { 
-    var	ranNumAr[i] = [...Array(8)].map(e=>~~(Math.random()*101));
+    ranNumAr[i] = [...Array(8)].map(e=>~~(Math.random()*101));
     var trial_count = i;
 	
 	
