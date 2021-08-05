@@ -107,12 +107,12 @@
     };
 	
 	var instruct_group_second = {
-      type: "instructions",
-       pages: [
-        'We will now show you data from fitness watches of <b>eight different people',
-	       'We will then ask you to evaluate the average of that <b>group of people',
-        'Press any key to begin'
-       ],
+      type: ""html-keyboard-response",
+       stimulus: `
+        <p>We will now show you data from fitness watches of <b>eight different people</b>
+	       <p>We will then ask you to evaluate the average of that <b>group of people</b>
+        <p>Press any key to begin'
+       `,
       post_trial_gap: 2000
 }
 	timeline.push(instruct_group_second)
