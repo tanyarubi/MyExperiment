@@ -186,7 +186,7 @@ var sequence = []
             stimulus: ranNumAr[trial_count][7],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000,
-		on_finish: function(trial_count){return trial_count++},
+		on_finish: function(){trial_count++;},
 		data: { trial_count: trial_count }
 	     }
     ]
