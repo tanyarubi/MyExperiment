@@ -191,7 +191,7 @@ var sequence = []
             stimulus: ranNumAr[trial_count][7],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
-	     }
+	     }, trial_count++;,
     ],
     timeline_variables: [
         { num: 'ranNumAr[i,0]' },
@@ -224,7 +224,7 @@ var sequence = []
 	timeline.push(slider_indiv);
 		
 
-	trial_count++;
+	
 	
 	
 	/* start the experiment */
