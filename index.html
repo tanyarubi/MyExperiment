@@ -141,12 +141,12 @@ var sequence = []
 		on_finish: function(data) {
 			trial_count = trial_count + 1;
 			data.trial_i = trial_count;
-			
+			trial_count = data.trial_i;
 		}	
         },
         {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[data.trial_count][0],
+            stimulus: ranNumAr[trial_count][0],
             choices: jsPsych.NO_KEYS,
             trial_duration: 1000
         },
