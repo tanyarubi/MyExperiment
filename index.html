@@ -207,6 +207,9 @@ var sequence = []
     labels: ['0','100'],
     prompt: `<p>What was this person's activity level?</p>`,
     data: {sequence}
+		on_finish: function() {
+       trial_count++;
+}
 	}
 	
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
@@ -216,9 +219,7 @@ var sequence = []
 	var node = {
     timeline: [test_trial, slider_indiv],
     repetitions: 3,
-	on_timeline_finish: function() {
-       trial_count++;
-}}
+	}
 	
 	
 	
