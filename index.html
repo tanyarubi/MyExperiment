@@ -187,7 +187,7 @@ var sequence = []
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000,
 		on_finish: function(trial_count){return trial_count++},
-		data: {trial_count}
+		jsPsych.data.addProperties({trial_count: trial_count});
 	     }
     ]
 }
