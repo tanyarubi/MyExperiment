@@ -120,28 +120,46 @@
 }
 	timeline.push(instruct_group_second)
 
-for (i=0; i<Ntrials; i++){
-		ranNumAr[i] = [...Array(8)].map(e=>~~(Math.random()*101));}
+
+	var slider_group = {
+    type: 'html-slider-response',
+	stimulus: [],
+    labels: ['0','100'],
+    prompt: `<p>What was this group's activity level?</p>`,
+		
+    data: {sequence}
+	}
+
+	var slider_indiv = {
+    type: 'html-slider-response',
+	stimulus: [],
+    labels: ['0','100'],
+    prompt: `<p>What was this person's activity level?</p>`,
+    data: {sequence},
+	}
+	
+	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
 	
 	
-var sequence = []		
+var timeline = []	
+
+for (var i = 0; i < Ntrials; i++) { 
+	
+    var trial_count = trials[i];
+	ranNumAr[i] = [...Array(8)].map(e=>~~(Math.random()*101));
+	
 
 	//create trial function
 	
-		
-	
-
 	var test_trial = {
-    timeline: [
+
+    timeline.push(
         {
             type: 'html-keyboard-response',
             stimulus: '+',
             choices: jsPsych.NO_KEYS,
             trial_duration: 500,
-		on_finish: function(data) {
-			var trial_count = trial_count + 1;
-			
-		}	
+				
         },
         {
             type: 'html-keyboard-response',
@@ -195,39 +213,13 @@ var sequence = []
 	     }
     ]
 }
-	
+    );
+}	
 
-	var slider_group = {
-    type: 'html-slider-response',
-	stimulus: [],
-    labels: ['0','100'],
-    prompt: `<p>What was this group's activity level?</p>`,
-		
-    data: {sequence}
-	}
-
-	var slider_indiv = {
-    type: 'html-slider-response',
-	stimulus: [],
-    labels: ['0','100'],
-    prompt: `<p>What was this person's activity level?</p>`,
-    data: {sequence},
-	}
-	
-	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
-	
-	
-		
-	var node = {
-    timeline: [test_trial, slider_indiv],
-    repetitions: 3,
-	}
-	
-	
-	
 	/* start the experiment */
+	     
     jsPsych.init({
-      timeline: [node],
+      timeline: [timeline],
 	  on_finish: function() {
         jsPsych.data.displayData('csv');
 		jsPsych.data.get().localSave('csv','mydata.csv');
