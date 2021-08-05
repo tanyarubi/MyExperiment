@@ -221,7 +221,7 @@ var sequence = []
 	
 	/* start the experiment */
     jsPsych.init({
-      timeline: [timeline, node],
+      timeline: [node],
 	  on_finish: function() {
         jsPsych.data.displayData('csv');
 		jsPsych.data.get().localSave('csv','mydata.csv');
