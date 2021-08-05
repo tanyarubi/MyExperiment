@@ -141,7 +141,7 @@ var sequence = []
 		on_finish: function(data) {
 			trial_count = trial_count + 1;
 			data.trial_i = trial_count;
-			trial_count = data.trial_i;
+			trial_count = jsPsych.data.get(trial_i).last(1).values()[0];
 		}	
         },
         {
