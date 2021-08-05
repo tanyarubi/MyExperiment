@@ -141,7 +141,7 @@ var sequence = []
         },
         {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[data.trial_i][0],
+            stimulus: ranNumAr[trial_count][0],
             choices: jsPsych.NO_KEYS,
             trial_duration: 1000
         },
@@ -190,6 +190,7 @@ var sequence = []
 		on_finish: function(data) {
 			data.trial_i = trial_count;
     		trial_count = trial_count + 1;
+			trial_count = data.trial_i;
 		}	   
 	     }
     ]
