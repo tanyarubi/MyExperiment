@@ -207,7 +207,7 @@ for (var j = 0; j < Ntrials; j++) {
 	/* start the experiment */
 	     
     jsPsych.init({
-      timeline: [timeline],
+      timeline: timeline,
 	  on_finish: function() {
         jsPsych.data.displayData('csv');
 		jsPsych.data.get().localSave('csv','mydata.csv');
