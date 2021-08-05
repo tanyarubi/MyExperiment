@@ -212,13 +212,16 @@ var sequence = []
 	
 	timeline.push(slider_indiv);
 		
-
+	var node = {
+    timeline: [test_trial, slider_indiv],
+    repetitions: 2
+}
 	
 	
 	
 	/* start the experiment */
     jsPsych.init({
-      timeline: timeline,
+      timeline: [timeline, node],
 	  on_finish: function() {
         jsPsych.data.displayData('csv');
 		jsPsych.data.get().localSave('csv','mydata.csv');
