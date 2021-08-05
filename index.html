@@ -188,9 +188,9 @@ var sequence = []
 		trial_duration: 1000,
 		data: { trial_count: trial_count },
 		on_finish: function(data) {
+			trial_count = trial_count + 1;
 			data.trial_i = trial_count;
-    		trial_count = trial_count + 1;
-			trial_count = data.trial_i;
+			
 		}	   
 	     }
     ]
