@@ -186,7 +186,6 @@ var sequence = []
             stimulus: ranNumAr[trial_count][7],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000,
-		on_finish: function(){trial_count++;},
 		data: { trial_count: trial_count }
 	     }
     ]
@@ -198,6 +197,7 @@ var sequence = []
 	stimulus: [],
     labels: ['0','100'],
     prompt: `<p>What was this group's activity level?</p>`,
+		
     data: {sequence}
 	}
 
@@ -206,6 +206,7 @@ var sequence = []
 	stimulus: [],
     labels: ['0','100'],
     prompt: `<p>What was this person's activity level?</p>`,
+		
     data: {sequence}
 	}
 	
@@ -214,7 +215,7 @@ var sequence = []
 	
 		
 	var node = {
-    timeline: [test_trial, slider_indiv],
+    timeline: [test_trial, {trial_count++;}, slider_indiv],
     repetitions: 3
 }
 	
