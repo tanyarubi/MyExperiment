@@ -140,14 +140,8 @@
 	
 for (var i = 0; i < Ntrials; i++) { 
     ranNumAr[i] = [...Array(8)].map(e=>~~(Math.random()*101));
-    var trial_count = i;
-	
-	
 
 	//create trial function
-	
-	
-
     timeline.push(
         {
             type: 'html-keyboard-response',
@@ -158,52 +152,52 @@ for (var i = 0; i < Ntrials; i++) {
         },
         {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[trial_count][0],
+            stimulus: ranNumAr[i][0],
             choices: jsPsych.NO_KEYS,
             trial_duration: 1000
         },
 	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[trial_count][1],
+            stimulus: ranNumAr[i][1],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[trial_count][2],
+            stimulus: ranNumAr[i][2],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	    	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[trial_count][3],
+            stimulus: ranNumAr[i][3],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	    	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[trial_count][4],
+            stimulus: ranNumAr[i][4],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	    	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[trial_count][5],
+            stimulus: ranNumAr[i][5],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	    	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[trial_count][6],
+            stimulus: ranNumAr[i][6],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	    	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[trial_count][7],
+            stimulus: ranNumAr[i][7],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000,
-		data: { trial_count: trial_count },
+		data: { trial_count: i },
 		},
     );
 }
