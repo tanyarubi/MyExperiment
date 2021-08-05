@@ -138,8 +138,8 @@
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
 	
 	
-for (var i = 0; i < Ntrials; i++) { 
-    ranNumAr[i] = [...Array(8)].map(e=>~~(Math.random()*101));
+for (var j = 0; j < Ntrials; j++) { 
+    ranNumAr[j] = [...Array(8)].map(e=>~~(Math.random()*101));
 
 	//create trial function
     var node = {
@@ -153,52 +153,52 @@ for (var i = 0; i < Ntrials; i++) {
         },
         {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[i][0],
+            stimulus: ranNumAr[j][0],
             choices: jsPsych.NO_KEYS,
             trial_duration: 1000
         },
 	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[i][1],
+            stimulus: ranNumAr[j][1],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[i][2],
+            stimulus: ranNumAr[j][2],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	    	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[i][3],
+            stimulus: ranNumAr[j][3],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	    	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[i][4],
+            stimulus: ranNumAr[j][4],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	    	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[i][5],
+            stimulus: ranNumAr[j][5],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	    	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[i][6],
+            stimulus: ranNumAr[j][6],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000
 	     },
 	    	      {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[i][7],
+            stimulus: ranNumAr[j][7],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000,
-		data: { trial_count: i },
+		data: { trial_count: j },
 		}]
     }
 	    timeline.push(node);
