@@ -208,7 +208,7 @@ var sequence = []
     prompt: `<p>What was this person's activity level?</p>`,
     data: {sequence},
 	on_finish: function() {
-       data.trial_count++;
+       jsPsych.data.write(trial_count) = jsPsych.getLastTrialData(trial_count)+1;
 }
 	}
 	
