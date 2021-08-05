@@ -31,12 +31,9 @@
 	var max_n = 100
 	var min_n = 0
 	var c = 30 //constant that bounds the scale for the samples' mean
-	
-	let ranNumAr = [];
-	let ranNumStr = [];
-	let backToArr = [];
-	/* create timeline */
-    	var timeline = [];
+
+	// create timeline:
+	var timeline = [];
 	
 		
 	// generate a random subject ID with 15 characters
@@ -141,8 +138,6 @@
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
 	
 	
-var timeline = []	
-
 for (var i = 0; i < Ntrials; i++) { 
     var	ranNumAr[i] = [...Array(8)].map(e=>~~(Math.random()*101));
     var trial_count = i;
