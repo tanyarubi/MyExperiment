@@ -142,7 +142,7 @@ for (var i = 0; i < Ntrials; i++) {
     ranNumAr[i] = [...Array(8)].map(e=>~~(Math.random()*101));
 
 	//create trial function
-    timeline.push(
+    timeline.push([
         {
             type: 'html-keyboard-response',
             stimulus: '+',
@@ -198,7 +198,7 @@ for (var i = 0; i < Ntrials; i++) {
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000,
 		data: { trial_count: i },
-		},
+		}]
     );
 }
 
