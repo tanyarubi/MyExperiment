@@ -22,7 +22,7 @@
 	<script>
 	//flow paramaters */ 
 	var Npractice = 1;
-	var Ntrials = 2;
+	var Ntrials = 3;
 	var show_RT = 500; //milisec
 	
 	//pardigm parameters
@@ -125,12 +125,7 @@ for (i=0; i<Ntrials; i++){
 	
 	
 var sequence = []		
-	var fixation = {
-      type: 'html-keyboard-response',
-      stimulus: '<div style="font-size:60px;">+</div>',
-      choices: jsPsych.NO_KEYS,
-      trial_duration: 1000
-    }
+
 	//create trial function
 	
 		
@@ -193,11 +188,6 @@ var sequence = []
 		trial_duration: 1000,
 		on_finish: function(){return trial_count++}
 	     }
-    ],
-    timeline_variables: [
-        { num: 'ranNumAr[i,0]' },
-        { num: 'ranNumAr[i,1]' },
-
     ]
 }
 	timeline.push(test_trial)
