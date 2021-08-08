@@ -40,9 +40,10 @@
 	var subject_id = jsPsych.randomization.randomID(4);
 	
 	// pick a random condition for the subject at the start of the experiment
+	// record the condition assignment in the jsPsych data
 	var condition_assignment = jsPsych.randomization.sampleWithoutReplacement(['conditionIndifFirst', 'conditionGroupFirst'], 1)[0];
 
-	// record the condition assignment in the jsPsych data
+
 	// this adds a property called 'subject' and a property called 'condition' to every trial
 	jsPsych.data.addProperties({
 	  subject: subject_id,
@@ -121,8 +122,16 @@
 	var slider_group = {
     type: 'html-slider-response',
 	stimulus: [],
-    labels: ['0','100'],
+    labels: ['0','25','50','75','100'],
     prompt: `<p>What was this group's activity level?</p>`,
+		on_load: function()  {
+    var input = document.querySelector('#jspsych-html-slider-response-response')
+
+    input.addEventListener('input', function() {
+      document.querySelector('#answer-display').innerText = input.valueAsNumber.toString()
+    })
+
+  }
 		
     
 	}
@@ -130,9 +139,16 @@
 	var slider_indiv = {
     type: 'html-slider-response',
 	stimulus: [],
-    labels: ['0','100'],
+    labels: ['0','25','50','75','100'],
     prompt: `<p>What was this person's activity level?</p>`,
-    
+    on_load: function()  {
+    var input = document.querySelector('#jspsych-html-slider-response-response')
+
+    input.addEventListener('input', function() {
+      document.querySelector('#answer-display').innerText = input.valueAsNumber.toString()
+    })
+
+  }
 	}
 	
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
