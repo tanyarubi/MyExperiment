@@ -156,7 +156,7 @@
 	
 	
 for (var j = 0; j < Ntrials; j++) { 
-    ranNumAr[j] = stochasm({mean: 75, stdev: 14, min: 0, max: 100})
+    ranNumAr[j] = stochasm({kind: "integer",mean: 75, stdev: 14, min: 0, max: 100})
 
 	//create trial function
     var node = {
