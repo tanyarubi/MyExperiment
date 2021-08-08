@@ -156,7 +156,7 @@
 	
 var gen = stochasm({kind: "integer",mean: this.mu, stdev: 14, min: 0, max: 100});	
 for (var j = 0; j < Ntrials; j++) { 
-	this.mu = ran.range(2 * sigma - 15, max_n - 2 * sigma + 1 + 15);
+	this.mu = stochasm({kind: "integer", mean: 50, min: 20, max: 80});
     ranNumAr[j] = gen.next(8);
 	
 	//create trial function
