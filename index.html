@@ -217,7 +217,7 @@ for (var j = 0; j < Ntrials; j++) {
             stimulus: ranNumAr[j][7],
             choices: jsPsych.NO_KEYS,
 		trial_duration: 1000,
-		data: { trial_count: j },
+		data: { trial_count: j, mu: mu },
 		}],
     }
 	    timeline.push(node);
