@@ -11,6 +11,7 @@
 	        <script src="jspsych-6.3.1/plugins/jspsych-animation.js"></script>
 		<script src="jspychophysics/jspsych-psychophysics.js"></script>
 		<link href="jspsych-6.3.1/css/jspsych.css" rel="stylesheet" type="text/css">
+	    	<script defer src="stochasm.js"></script>
 		
 		
     </head>
@@ -155,7 +156,7 @@
 	
 	
 for (var j = 0; j < Ntrials; j++) { 
-    ranNumAr[j] = [...Array(8)].map(e=>~~(Math.random()*101));
+    ranNumAr[j] = stochasm({mean: 75, stdev: 14, min: 0, max: 100})
 
 	//create trial function
     var node = {
