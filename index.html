@@ -170,7 +170,7 @@ for (var j = 0; j < Ntrials; j++) {
         },
         {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[j][0],
+            stimulus: stochasm({kind: "integer",mean: 75, stdev: 14, min: 0, max: 100}),
             choices: jsPsych.NO_KEYS,
             trial_duration: 1000
         },
