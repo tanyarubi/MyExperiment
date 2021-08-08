@@ -138,9 +138,9 @@
 
 	var slider_indiv = {
     type: 'html-slider-response',
-	stimulus: [],
+	stimulus: [`<p>What was this person's activity level?</p>`],
     labels: ['0','25','50','75','100'],
-    prompt: `<p>What was this person's activity level?</p>`,
+    prompt:  '<p>Your answer is <span id="answer-display"></span></p>',
     on_load: function()  {
     var input = document.querySelector('#jspsych-html-slider-response-response')
 
