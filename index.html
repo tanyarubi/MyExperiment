@@ -154,10 +154,10 @@
 	
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
 	
-	
+var gen = stochasm({kind: "integer",mean: 75, stdev: 14, min: 0, max: 100});	
 for (var j = 0; j < Ntrials; j++) { 
-    ranNumAr[j] = stochasm({kind: "integer",mean: 75, stdev: 14, min: 0, max: 100}).toString();
-
+    ranNumAr[j] = gen.next(8);
+	
 	//create trial function
     var node = {
 	    timeline:[
@@ -170,7 +170,7 @@ for (var j = 0; j < Ntrials; j++) {
         },
         {
             type: 'html-keyboard-response',
-            stimulus: stochasm({kind: "integer",mean: 75, stdev: 14, min: 0, max: 100}),
+            stimulus: ranNumAr[j],
             choices: jsPsych.NO_KEYS,
             trial_duration: 1000
         },
