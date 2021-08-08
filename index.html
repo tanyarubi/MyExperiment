@@ -117,7 +117,7 @@
        `,
       post_trial_gap: 2000
 }
-	timeline.push(instruct_group_second)
+
 
 
 	var slider_group = {
@@ -161,7 +161,14 @@ for (var j = 0; j < Ntrials; j++) {
 	
 	//create trial function
     var node = {
-	    timeline:[
+	     timeline:[
+	{type: "html-keyboard-response",
+       stimulus: `
+        <p>Ready?</b>
+        <p>Press any key to begin</b>
+       `,
+      post_trial_gap: 2000
+	},
         {
             type: 'html-keyboard-response',
             stimulus: '+',
