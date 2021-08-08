@@ -154,8 +154,9 @@
 	
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
 	
-var gen = stochasm({kind: "integer",mean: 75, stdev: 14, min: 0, max: 100});	
+var gen = stochasm({kind: "integer",mean: this.mu, stdev: 14, min: 0, max: 100});	
 for (var j = 0; j < Ntrials; j++) { 
+	this.mu = ran.range(2 * sigma - 15, max_n - 2 * sigma + 1 + 15);
     ranNumAr[j] = gen.next(8);
 	
 	//create trial function
