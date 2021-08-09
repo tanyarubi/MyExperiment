@@ -21,15 +21,17 @@
 	
 	
 	<script>
-		var names_full = ['James Smith',	'John Johnson',	'Robert Williams',	'Michael Brown',	'William Jones',
-  'David Miller',	'Richard Davis',	'Joseph Garcia',	'Thomas Rodriguez',	'Charles Wilson',	'Christopher Martinez',
-    'Daniel Anderson',	'Matthew Taylor',	'Anthony Thomas',	'Donald Hernandez',	'Mark Moore',	'Paul Martin',
-      'Steven Jackson',	'Andrew Thompson',	'Kenneth White',	'Joshua Lopez',	'George Lee',	'Kevin Gonzalez',
-        'Brian Harris',	'Edward Clark',	'Mary Lewis',	'Patricia Robinson',	'Jennifer Walker',	'Linda Perez',
-          'Elizabeth Hall',	'Barbara Young',	'Susan Allen',	'Jessica Sanchez',	'Sarah Wright',	'Karen King',
-            'Nancy Scott',	'Margaret Green',	'Lisa Baker',	'Betty Adams',	'Dorothy Nelson',	'Sandra Hill',
-              'Ashley Ramirez',	'Kimberly Campbell',	'Donna Mitchell',	'Emily Roberts',	'Michelle Carter',
-                'Carol Phillips',	'Amanda Evans',	'Melissa Turner',	'Deborah Torres',];
+		var names = ['James S.',	'John J.',	'Robert W.',	'Michael B.',	'William J.',	'David M.',	'Richard D.',	'Joseph G.',	'Thomas R.',
+  'Charles W.',	'Christopher M.',	'Daniel A.',	'Matthew T.',	'Anthony T.',	'Donald H.',	'Mark M.',	'Paul M.',	'Steven J.',	'Andrew T.',
+    'Kenneth W.',	'Joshua L.',	'George L.',	'Kevin G.',	'Brian H.',	'Edward C.',	'Mary L.',	'Patricia R.',	'Jennifer W.',	'Linda P.',
+      'Elizabeth H.',	'Barbara Y.',	'Susan A.',	'Jessica S.',	'Sarah W.',	'Karen K.',	'Nancy S.',	'Margaret G.',	'Lisa B.',	'Betty A.',
+        'Dorothy N.',	'Sandra H.',	'Ashley R.',	'Kimberly C.',	'Donna M.',	'Emily R.',	'Michelle C.',	'Carol P.',	'Amanda E.',	'Melissa T.',	'Deborah T.',
+        'James S.',	'John J.',	'Robert W.',	'Michael B.',	'William J.',	'David M.',	'Richard D.',	'Joseph G.',	'Thomas R.',
+  'Charles W.',	'Christopher M.',	'Daniel A.',	'Matthew T.',	'Anthony T.',	'Donald H.',	'Mark M.',	'Paul M.',	'Steven J.',	'Andrew T.',
+    'Kenneth W.',	'Joshua L.',	'George L.',	'Kevin G.',	'Brian H.',	'Edward C.',	'Mary L.',	'Patricia R.',	'Jennifer W.',	'Linda P.',
+      'Elizabeth H.',	'Barbara Y.',	'Susan A.',	'Jessica S.',	'Sarah W.',	'Karen K.',	'Nancy S.',	'Margaret G.',	'Lisa B.',	'Betty A.',
+      	'Dorothy N.',	'Sandra H.',	'Ashley R.',	'Kimberly C.',	'Donna M.',	'Emily R.',	'Michelle C.',	'Carol P.',	'Amanda E.',	'Melissa T.',	'Deborah T.'];
+                
 		
 	//flow paramaters */ 
 	var Npractice = 1;
@@ -148,6 +150,7 @@
     type: 'html-slider-response',
 	stimulus: [`<p>What was this person's activity level?</p>`],
     labels: ['0','100'],
+		require_movement: true;
 	}
 	
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
@@ -156,7 +159,7 @@ var gen = stochasm({kind: "integer",mean: this.mu, stdev: 14, min: 0, max: 100})
 for (var j = 0; j < Ntrials; j++) { 
 	var mu = stochasm({kind: "integer", mean: 50, min: 20, max: 80});
     ranNumAr[j] = gen.next(8);
-	var name = jsPsych.randomization.sampleWithReplacement(names_full, 1);
+	var name = jsPsych.randomization.sampleWithReplacement(names, 1);
 	//create trial function
     var node = {
 	     timeline:[
