@@ -21,17 +21,11 @@
 	
 	
 	<script>
-		var names = ['James S.',	'John J.',	'Robert W.',	'Michael B.',	'William J.',	'David M.',	'Richard D.',	'Joseph G.',	'Thomas R.',
-  'Charles W.',	'Christopher M.',	'Daniel A.',	'Matthew T.',	'Anthony T.',	'Donald H.',	'Mark M.',	'Paul M.',	'Steven J.',	'Andrew T.',
-    'Kenneth W.',	'Joshua L.',	'George L.',	'Kevin G.',	'Brian H.',	'Edward C.',	'Mary L.',	'Patricia R.',	'Jennifer W.',	'Linda P.',
-      'Elizabeth H.',	'Barbara Y.',	'Susan A.',	'Jessica S.',	'Sarah W.',	'Karen K.',	'Nancy S.',	'Margaret G.',	'Lisa B.',	'Betty A.',
-        'Dorothy N.',	'Sandra H.',	'Ashley R.',	'Kimberly C.',	'Donna M.',	'Emily R.',	'Michelle C.',	'Carol P.',	'Amanda E.',	'Melissa T.',	'Deborah T.',
-        'James S.',	'John J.',	'Robert W.',	'Michael B.',	'William J.',	'David M.',	'Richard D.',	'Joseph G.',	'Thomas R.',
-  'Charles W.',	'Christopher M.',	'Daniel A.',	'Matthew T.',	'Anthony T.',	'Donald H.',	'Mark M.',	'Paul M.',	'Steven J.',	'Andrew T.',
-    'Kenneth W.',	'Joshua L.',	'George L.',	'Kevin G.',	'Brian H.',	'Edward C.',	'Mary L.',	'Patricia R.',	'Jennifer W.',	'Linda P.',
-      'Elizabeth H.',	'Barbara Y.',	'Susan A.',	'Jessica S.',	'Sarah W.',	'Karen K.',	'Nancy S.',	'Margaret G.',	'Lisa B.',	'Betty A.',
-      	'Dorothy N.',	'Sandra H.',	'Ashley R.',	'Kimberly C.',	'Donna M.',	'Emily R.',	'Michelle C.',	'Carol P.',	'Amanda E.',	'Melissa T.',	'Deborah T.'];
-                
+		var firms = ['Telecommunication company',	'Mobile Network Operator company',	'Software company',
+            'Software company',	'Marketing firm',	'Marketing firm',	'Marketing firm',	'PR Company',	'PR Company',
+              'Survey company',	'Survey company',	'Market research company',	'Market research company',
+                'Public Opinion Research company',	'Public Opinion Research company',	'Data Mining company',
+                  'Data Mining company',	'Employment agency']
 		
 	//flow paramaters */ 
 	var Npractice = 1;
@@ -98,7 +92,7 @@
         <p>Press any key to continue.</p>
        `
     };
-	timeline.push(instruct_indiv_first)
+	
 		
 	var instruct_indiv_second = {
       type: "html-keyboard-response",
@@ -113,12 +107,14 @@
 	var instruct_group_first = {
       type: "html-keyboard-response",
       stimulus: `
-        <p>We will show you data from fitness watches of <b>eight different people</b>.
-		<p>We will then ask you to evaluate the average of that <b>group of people</b>.
-        <p>Press any key to begin.</p>
+      <p>We will show you data from the fitness watch of <b>eight different people</b>, who wore it for one day each.
+	<p>The numbers you will be shows are the number of minutes that they engaged in aerobic physical activity on that day. 
+	<p>These will be shown one after the other for a brief period of time.
+		<p>We will then ask you to evaluate the average of that group of people.  
+        <p>Press any key to continue.</p>
        `
     };
-	
+	timeline.push(instruct_group_first)
 	var instruct_group_second = {
       type: "html-keyboard-response",
        stimulus: `
@@ -132,16 +128,9 @@
 
 	var slider_group = {
     type: 'html-slider-response',
-	stimulus: [],
-    labels: ['0','25','50','75','100'],
-    prompt: `<p>What was this group's activity level?</p>`,
-		on_load: function()  {
-    var input = document.querySelector('#jspsych-html-slider-response-response')
-
-    input.addEventListener('input', function() {
-      document.querySelector('#answer-display').innerText = input.valueAsNumber.toString()
-    })
-
+	stimulus: [`<p>What was this group's activity level?</p>`],
+    labels: ['0','100'],
+		require_movement: true,
   }
 		
     
@@ -229,7 +218,7 @@ for (var j = 0; j < Ntrials; j++) {
 		}],
     }
 	    timeline.push(node);
-	timeline.push(slider_indiv);
+	timeline.push(slider_group);
 };
 
 	/* start the experiment */
