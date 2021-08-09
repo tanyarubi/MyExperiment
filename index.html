@@ -156,12 +156,12 @@ var gen = stochasm({kind: "integer",mean: this.mu, stdev: 14, min: 0, max: 100})
 for (var j = 0; j < Ntrials; j++) { 
 	var mu = stochasm({kind: "integer", mean: 50, min: 20, max: 80});
     ranNumAr[j] = gen.next(8);
-	var name[j] = jsPsych.randomization.sampleWithReplacement(names_full, 1);
+	var name = jsPsych.randomization.sampleWithReplacement(names_full, 1);
 	//create trial function
     var node = {
 	     timeline:[
 	{type: "html-keyboard-response",
-       stimulus: name[j],
+       stimulus: name,
       post_trial_gap: 2000,
 	 prompt: '<p>Recorded the following minutes of aerobic activity:',
 	 
