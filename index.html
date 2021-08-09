@@ -21,6 +21,16 @@
 	
 	
 	<script>
+		var names_full = ['James Smith',	'John Johnson',	'Robert Williams',	'Michael Brown',	'William Jones',
+  'David Miller',	'Richard Davis',	'Joseph Garcia',	'Thomas Rodriguez',	'Charles Wilson',	'Christopher Martinez',
+    'Daniel Anderson',	'Matthew Taylor',	'Anthony Thomas',	'Donald Hernandez',	'Mark Moore',	'Paul Martin',
+      'Steven Jackson',	'Andrew Thompson',	'Kenneth White',	'Joshua Lopez',	'George Lee',	'Kevin Gonzalez',
+        'Brian Harris',	'Edward Clark',	'Mary Lewis',	'Patricia Robinson',	'Jennifer Walker',	'Linda Perez',
+          'Elizabeth Hall',	'Barbara Young',	'Susan Allen',	'Jessica Sanchez',	'Sarah Wright',	'Karen King',
+            'Nancy Scott',	'Margaret Green',	'Lisa Baker',	'Betty Adams',	'Dorothy Nelson',	'Sandra Hill',
+              'Ashley Ramirez',	'Kimberly Campbell',	'Donna Mitchell',	'Emily Roberts',	'Michelle Carter',
+                'Carol Phillips',	'Amanda Evans',	'Melissa Turner',	'Deborah Torres',];
+		
 	//flow paramaters */ 
 	var Npractice = 1;
 	var Ntrials = 10;
@@ -146,15 +156,15 @@ var gen = stochasm({kind: "integer",mean: this.mu, stdev: 14, min: 0, max: 100})
 for (var j = 0; j < Ntrials; j++) { 
 	var mu = stochasm({kind: "integer", mean: 50, min: 20, max: 80});
     ranNumAr[j] = gen.next(8);
-	
+	var name[j] = jsPsych.randomization.sampleWithReplacement(names_full, 1);
 	//create trial function
     var node = {
 	     timeline:[
 	{type: "html-keyboard-response",
-       stimulus: `
-        <p>Ready?</b>
+       stimulus: [name[j],`
+        <p></b>
         <p>Press any key to begin</b>
-       `,
+       `],
       post_trial_gap: 2000
 	},
         {
