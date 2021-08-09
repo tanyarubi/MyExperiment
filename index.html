@@ -161,11 +161,10 @@ for (var j = 0; j < Ntrials; j++) {
     var node = {
 	     timeline:[
 	{type: "html-keyboard-response",
-       stimulus: [name[j],`
-        <p></b>
-        <p>Press any key to begin</b>
-       `],
-      post_trial_gap: 2000
+       stimulus: name[j],
+      post_trial_gap: 2000,
+	 prompt: '<p>Recorded the following minutes of aerobic activity:',
+	 
 	},
         {
             type: 'html-keyboard-response',
