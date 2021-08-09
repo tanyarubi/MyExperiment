@@ -68,9 +68,8 @@
 		in aerobic physical activity (walking, jogging, dancing, intense house work) on a particular day. </p>
 
         
-        <p>Press any key to begin.</p>
-       `,
-      post_trial_gap: 2000
+        <p>Press any key to continue.</p>
+       `
     };
 	timeline.push(instructions);
 	
@@ -80,10 +79,11 @@
       type: "html-keyboard-response",
       stimulus: `
         <p>We will show you data from the fitness watch of <b>one individual</b>, who wore it for eight consecutive days.
+	<p>The numbers you will be shows are the number of minutes that they engaged in aerobic physical activity every day. 
+	<p>These will be shown one after the other for a brief period of time.
 		<p>We will then ask you to evaluate the average of that individual.  
-        <p>Press any key to begin.</p>
-       `,
-      post_trial_gap: 2000
+        <p>Press any key to continue.</p>
+       `
     };
 	timeline.push(instruct_indiv_first)
 		
@@ -94,8 +94,7 @@
 		<p>We will then ask you to evaluate the average of that individual.
 
         <p>Press any key to begin.</p>
-       `,
-      post_trial_gap: 2000
+       `
     };
 	
 	var instruct_group_first = {
@@ -104,8 +103,7 @@
         <p>We will show you data from fitness watches of <b>eight different people</b>.
 		<p>We will then ask you to evaluate the average of that <b>group of people</b>.
         <p>Press any key to begin.</p>
-       `,
-      post_trial_gap: 2000
+       `
     };
 	
 	var instruct_group_second = {
@@ -114,8 +112,7 @@
         <p>We will now show you data from fitness watches of <b>eight different people</b>
 	       <p>We will then ask you to evaluate the average of that <b>group of people</b>
         <p>Press any key to begin</b>
-       `,
-      post_trial_gap: 2000
+       `
 }
 
 
@@ -140,16 +137,7 @@
 	var slider_indiv = {
     type: 'html-slider-response',
 	stimulus: [`<p>What was this person's activity level?</p>`],
-    labels: ['0','25','50','75','100'],
-    prompt:  '<p>Your answer is <span id="answer-display"></span></p>',
-    on_load: function()  {
-    var input = document.querySelector('#jspsych-html-slider-response-response')
-
-    input.addEventListener('input', function() {
-      document.querySelector('#answer-display').innerText = input.valueAsNumber.toString()
-    })
-
-  }
+    labels: ['0','100'],
 	}
 	
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
