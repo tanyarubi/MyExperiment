@@ -251,7 +251,7 @@ for (var j = 0; j < Ntrials; j++) {
       timeline: timeline,
 	    on_interaction_data_update: function(data) {
 	    var trial = jsPsych.currentTrial();
-		trial.data.screen_focus = data.event;
+		jsPsych.data.addProperties({focus: trial});
 		    
 	  },
 	  on_finish: function() {
