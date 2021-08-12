@@ -62,7 +62,18 @@
 	  subject: subject_id,
 	  condition: condition_assignment
 	});
+		
+ // capture info from Prolific
+  var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+  var study_id = jsPsych.data.getURLVariable('STUDY_ID');
+  var session_id = jsPsych.data.getURLVariable('SESSION_ID');
 
+  jsPsych.data.addProperties({
+    subject_id: subject_id,
+    study_id: study_id,
+    session_id: session_id
+  });
+		
     /* define welcome message trial */
     var welcome = {
       type: "html-keyboard-response",
@@ -239,6 +250,7 @@ for (var j = 0; j < Ntrials; j++) {
 	  on_finish: function() {
         jsPsych.data.displayData('csv');
 		jsPsych.data.get().localSave('csv','mydata.csv');
+		  window.location = "https://app.prolific.co"
     }
     });
 
