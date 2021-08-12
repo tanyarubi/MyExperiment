@@ -250,8 +250,8 @@ for (var j = 0; j < Ntrials; j++) {
     jsPsych.init({
       timeline: timeline,
 	    on_interaction_data_update: function(data) {
-	    var trial = jsPsych.currentTrial();
-		jsPsych.data.addProperties({focus: trial});
+	    
+		jsPsych.data.addProperties({focus: data});
 		    
 	  },
 	  on_finish: function() {
