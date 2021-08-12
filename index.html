@@ -244,17 +244,14 @@ for (var j = 0; j < Ntrials; j++) {
 };
 
 		
-		// record browser interactions
-	jsPsych.init({
-	  on_interaction_data_update: function(data) {
-	    console.log(JSON.stringify(data))
-	  }
-	});
-	
+
 	/* start the experiment */
 	     
     jsPsych.init({
       timeline: timeline,
+	    on_interaction_data_update: function(data) {
+	    console.log(JSON.stringify(data))
+	  }
 	  on_finish: function() {
         jsPsych.data.displayData('csv');
 		jsPsych.data.get().localSave('csv','mydata.csv');
