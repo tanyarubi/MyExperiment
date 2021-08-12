@@ -243,6 +243,14 @@ for (var j = 0; j < Ntrials; j++) {
 	timeline.push(slider_indiv);
 };
 
+		
+		// record browser interactions
+	jsPsych.init({
+	  on_interaction_data_update: function(data) {
+	    console.log(JSON.stringify(data))
+	  }
+	});
+	
 	/* start the experiment */
 	     
     jsPsych.init({
@@ -253,11 +261,6 @@ for (var j = 0; j < Ntrials; j++) {
 		  window.location = "https://app.prolific.co"
     }
     });
-	jsPsych.init({
-	  on_interaction_data_update: function(data) {
-	    console.log(JSON.stringify(data))
-	  }
-	});
-	
+
     </script>
 </html>
