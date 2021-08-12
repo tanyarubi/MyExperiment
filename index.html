@@ -74,6 +74,17 @@
     session_id: session_id
   });
 		
+		
+	timeline.push({
+  type: 'fullscreen',
+  fullscreen_mode: true
+});
+
+timeline.push({
+  type: 'html-keyboard-response',
+  stimulus: 'This trial will be in fullscreen mode.'
+});
+	
     /* define welcome message trial */
     var welcome = {
       type: "html-keyboard-response",
