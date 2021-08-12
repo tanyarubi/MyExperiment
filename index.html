@@ -250,7 +250,9 @@ for (var j = 0; j < Ntrials; j++) {
     jsPsych.init({
       timeline: timeline,
 	    on_interaction_data_update: function(data) {
-	    console.log(JSON.stringify(data))
+	    var trial = jsPsych.currentTrial();
+		trial.data.screen_focus = data.event;
+		    
 	  },
 	  on_finish: function() {
         jsPsych.data.displayData('csv');
