@@ -117,58 +117,12 @@ timeline.push({
         <p>We will show you data from the fitness watch of <b>one individual</b>, who wore it for eight consecutive days.
 	<p>The numbers you will be shows are the number of minutes that they engaged in aerobic physical activity every day. 
 	<p>These will be shown one after the other for a brief period of time.
-		<p>We will then ask you to evaluate the average of that individual.  
+		<p>We will then ask you to evaluate the activity level of that individual.  
         <p>Press any key to continue.</p>
        `
     };
 	timeline.push(instruct_indiv_first)
 		
-	var instruct_indiv_second = {
-      type: "html-keyboard-response",
-      stimulus: `
-        <p>We will now show you data from the fitness watch of <b>one individual</b>, who wore it for eight consecutive days.
-		<p>We will then ask you to evaluate the average of that individual.
-
-        <p>Press any key to begin.</p>
-       `
-    };
-	
-	var instruct_group_first = {
-      type: "html-keyboard-response",
-      stimulus: `
-        <p>We will show you data from fitness watches of <b>eight different people</b>.
-		<p>We will then ask you to evaluate the average of that <b>group of people</b>.
-        <p>Press any key to begin.</p>
-       `
-    };
-	
-	var instruct_group_second = {
-      type: "html-keyboard-response",
-       stimulus: `
-        <p>We will now show you data from fitness watches of <b>eight different people</b>
-	       <p>We will then ask you to evaluate the average of that <b>group of people</b>
-        <p>Press any key to begin</b>
-       `
-}
-
-
-
-	var slider_group = {
-    type: 'html-slider-response',
-	stimulus: [],
-    labels: ['0','25','50','75','100'],
-    prompt: `<p>What was this group's activity level?</p>`,
-		on_load: function()  {
-    var input = document.querySelector('#jspsych-html-slider-response-response')
-
-    input.addEventListener('input', function() {
-      document.querySelector('#answer-display').innerText = input.valueAsNumber.toString()
-    })
-
-  }
-		
-    
-	}
 
 	var slider_indiv = {
     type: 'html-slider-response',
