@@ -221,8 +221,8 @@ for (var j = 0; j < Ntrials; j++) {
 		    
 	  },
 	  on_finish: function() {
-        jsPsych.data.displayData('csv');
-		jsPsych.data.get().localSave('csv','mydata.csv');
+        	
+		  console.log(jsPsych.data.get().json());
 		  window.location = "https://app.prolific.co"
     }
     });
