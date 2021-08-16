@@ -226,6 +226,7 @@ for (var j = 0; j < Ntrials; j++) {
       timeline: timeline,
 	  on_finish: function() {
        		  jsPsych.data.displayData();
+		jsPsych.endExperiment('This part of the experiment is over');
 		
     }
     });
