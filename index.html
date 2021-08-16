@@ -29,7 +29,7 @@
 		
 	//flow paramaters */ 
 	var Npractice = 1;
-	var Ntrials = 10;
+	var Ntrials = 2;
 	var show_RT = 500; //milisec
 	
 	//pardigm parameters
@@ -225,7 +225,7 @@ for (var j = 0; j < Ntrials; j++) {
     jsPsych.init({
       timeline: timeline,
 	  on_finish: function() {
-       		  console.log(jsPsych.data.get().json());
+       		  jsPsych.data.displayData();
 		
     }
     });
