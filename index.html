@@ -225,7 +225,7 @@ for (var j = 0; j < Ntrials; j++) {
     jsPsych.init({
       timeline: timeline,
 	  on_finish: function() {
-	 console.log('Just added new data. The contents of the data are: '+JSON.stringify(data));
+	 console.log(JSON.stringify(data));
 		}
 	    });
 	
