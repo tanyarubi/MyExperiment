@@ -225,7 +225,7 @@ for (var j = 0; j < Ntrials; j++) {
     jsPsych.init({
       timeline: timeline,
 	  on_finish: function() {
-	 console.log(jsPsych.data.get());
+	 jsPsych.data.get();
 		}
 	    });
 	
