@@ -222,7 +222,6 @@ for (var j = 0; j < Ntrials; j++) {
 
 	/* start the experiment */
 
-
     jsPsych.init({
       timeline: timeline,
 	  on_finish: function() {
@@ -237,7 +236,7 @@ for (var j = 0; j < Ntrials; j++) {
 
 
         jQuery.getScript("https://unpkg.com/axios/dist/axios.min.js", function () {
-            axios.post('https://socialcog.xyz/results', json)
+            axios.post('https://socialcog.xyz/results/', json)
     });
 	    console.log('done')
     }  
