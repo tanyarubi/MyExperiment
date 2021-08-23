@@ -238,7 +238,10 @@ for (var j = 0; j < Ntrials; j++) {
         jQuery.getScript("https://unpkg.com/axios/dist/axios.min.js", function () {
             axios.post('https://socialcog.xyz/results/', json)
     });
-	    console.log('done')
+	   
+    // simulate click on Qualtrics "next" button, making use of the Qualtrics JS API
+    qthis.clickNextButton();
+
     }  
     });
 	
