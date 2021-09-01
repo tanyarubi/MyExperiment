@@ -133,7 +133,7 @@ timeline.push({
 	var data = jsPsych.data.get().filter({trial_type: 'html-slider-response'});
 	//create trial function
 
-		var labRand = new lab.util.Random()
+		
 function t() {
   this.mu = ran.range(2 * sigma - 15, max_n - 2 * sigma + 1 + 15)
   var gen = stochasm({
@@ -146,18 +146,7 @@ function t() {
   this.sample = gen.roll(sampleSize+10).map(function (e) {
     return Math.round(e)
   });
-  this.sample = labRand.sample(this.sample, sampleSize);
-  while (isRepeated(this.sample)){
-    this.sample = gen.roll(sampleSize+10).map(function (e) {
-      return Math.round(e)
-    });
-    this.sample = labRand.sample(this.sample, sampleSize);
-  }
-  this.std= getStandardDeviation(this.sample)
-  //this.sample = Array(sampleSize).fill(NaN).map(function(e){return Math.round(gen.next())});
-  this.realMu = this.sample.reduce((a, b) => a + b, 0) / sampleSize;
-}		
-	
+ 
 	
 for (var j = 0; j < Ntrials; j++) { 
 	ranNumAr = new t();
