@@ -135,7 +135,7 @@ timeline.push({
 
 		
 function t() {
-  this.mu = ran.range(2 * sigma - 15, max_n - 2 * sigma + 1 + 15)
+  this.mu = stochasm({kind: "integer",mean: 50, min: 20, max: 80})
   var gen = stochasm({
     mean: this.mu,
     stdev: sigma,
