@@ -144,7 +144,8 @@ function t() {
     max: 99
   });
   gen.roll = gen.next;
-  this.sample = gen.roll(8).map(function (e) {
+  this.temp = parseFloat(gen.roll(8)),
+	  this.sample = temp.map(function (e) {
     return Math.round(e)
   });
 };
