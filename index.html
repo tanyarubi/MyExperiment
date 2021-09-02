@@ -49,7 +49,7 @@
 	var timeline = [];
 	let ranNumAr = [];
 	let param = [];
-		
+	let temp = [];	
 	// generate a random subject ID with 15 characters
 	var subject_id = jsPsych.randomization.randomID(4);
 	
@@ -145,7 +145,7 @@ function t() {
   });
   gen.roll = gen.next;
   this.temp = parseFloat(gen.roll(8)),
-	  this.sample = temp.map(function (e) {
+	  this.sample = this.temp.map(function (e) {
     return Math.round(e)
   });
 };
