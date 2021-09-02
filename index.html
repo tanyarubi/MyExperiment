@@ -143,14 +143,14 @@ function t() {
     max: max_n - 1
   });
   gen.roll = gen.next;
-  this.sample = gen.roll(sampleSize+10).map(function (e) {
+  this.sample = gen.roll(8).map(function (e) {
     return Math.round(e)
   });
 };
 	
 for (var j = 0; j < Ntrials; j++) { 
 	param = new t();
-	ranNumAr = param.sample.toString();
+	ranNumAr = param.sample;
 	var name = jsPsych.randomization.sampleWithReplacement(names, 1);
 	
 	//create trial function
