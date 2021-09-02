@@ -139,9 +139,9 @@ function t() {
   this.mu = stochasm({kind: "integer",mean: 50, min: 20, max: 80})
   var gen = stochasm({
     mean: this.mu,
-    stdev: sigma,
-    min: min_n + 1,
-    max: max_n - 1
+    stdev: 20,
+    min: 0,
+    max: 99
   });
   gen.roll = gen.next;
   this.sample = gen.roll(8).map(function (e) {
@@ -151,7 +151,7 @@ function t() {
 	
 for (var j = 0; j < Ntrials; j++) { 
 	param = new t();
-	ranNumAr = param.mu.slice();
+	ranNumAr = param.sample;
 	var name = jsPsych.randomization.sampleWithReplacement(names, 1);
 	
 	//create trial function
