@@ -149,8 +149,8 @@ function t() {
 };
 	
 for (var j = 0; j < Ntrials; j++) { 
-	param = new t();
-	ranNumAr = param.sample.slice();
+	param[j] = new t();
+	ranNumAr[j] = param.sample.slice();
 	var name = jsPsych.randomization.sampleWithReplacement(names, 1);
 	
 	//create trial function
@@ -172,7 +172,7 @@ for (var j = 0; j < Ntrials; j++) {
         },
         {
             type: 'html-keyboard-response',
-            stimulus: ranNumAr[0],
+            stimulus: ranNumAr[j][0],
             choices: jsPsych.NO_KEYS,
             trial_duration: show_RT
         },
