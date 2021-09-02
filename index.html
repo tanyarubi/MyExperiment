@@ -151,7 +151,7 @@ function t() {
 	
 for (var j = 0; j < Ntrials; j++) { 
 	param[j] = new t();
-	ranNumAr[j] = param.sample.slice();
+	ranNumAr[j] = param[j].sample.slice();
 	var name = jsPsych.randomization.sampleWithReplacement(names, 1);
 	
 	//create trial function
