@@ -135,24 +135,10 @@ timeline.push({
 	//create trial function
 
 		
-function t() {
-  this.mu = stochasm({kind: "integer",mean: 50, min: 20, max: 80})
-  var gen = stochasm({
-    mean: this.mu,
-    stdev: 20,
-    min: 0,
-    max: 99
-  });
-  gen.roll = gen.next;
-  this.temp = parseFloat(gen.roll(8));
-  this.sample = temp.map(function (e) {
-    return Math.round(e)
-  });
-};
-	
+var gen = stochasm({kind: "integer",mean: this.mu, stdev: 14, min: 0, max: 100});	
 for (var j = 0; j < Ntrials; j++) { 
-	param = new t();
-	ranNumAr = param.sample.slice();
+	var mu = stochasm({kind: "integer", mean: 50, min: 20, max: 80});
+    ranNumAr = gen.next(8);
 	var name = jsPsych.randomization.sampleWithReplacement(names, 1);
 	
 	//create trial function
