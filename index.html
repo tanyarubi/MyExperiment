@@ -230,7 +230,7 @@ timeline.push({
 	  },
 	  on_finish: function() {
         	
-		  console.log(jsPsych.data.get().json());
+		   saveData("experiment_data", jsPsych.data.get().csv()); 
 		  window.location = "https://app.prolific.co"
     }
     });
