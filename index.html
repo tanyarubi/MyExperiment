@@ -135,7 +135,7 @@ timeline.push({
 	//create trial function
 
 		
-var gen = stochasm({kind: "integer",mean: this.mu, stdev: 14, min: 0, max: 100});	
+var gen = stochasm({mean: this.mu, stdev: 14, min: 0, max: 100});	
 for (var j = 0; j < Ntrials; j++) { 
 	var mu = stochasm({kind: "integer", mean: 50, min: 20, max: 80});
     ranNumAr = gen.next(8).map(function (e) {
