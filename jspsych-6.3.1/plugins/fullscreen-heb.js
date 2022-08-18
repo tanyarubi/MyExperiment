@@ -23,14 +23,14 @@ jsPsych.plugins.fullscreen = (function() {
       message: {
         type: jsPsych.plugins.parameterType.STRING,
         pretty_name: 'Message',
-        default: '<p>לחצו על הכפתור כדי להמשיך</p>',
+        default: '<p>לחצו על הכפתור כדי להמשיך</p><br><br><br>',
         array: false,
         description: 'HTML content to display above the button to enter fullscreen mode.'
       },
       button_label: {
         type: jsPsych.plugins.parameterType.STRING,
         pretty_name: 'Button label',
-        default:  'Continue',
+        default:  'לחצו כאן',
         array: false,
         description: 'The text that appears on the button to enter fullscreen.'
       },
