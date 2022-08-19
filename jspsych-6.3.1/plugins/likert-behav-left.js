@@ -95,7 +95,7 @@ jsPsych.plugins['survey-likert'] = (function() {
     html += ".jspsych-survey-likert-statement { display:block; font-size: 16px; padding-top: 40px; margin-bottom:10px; }"+
       ".jspsych-survey-likert-opts { list-style:none; width:"+w+"; margin:auto; padding:0 0 35px; display:block; font-size: 14px; line-height:1.1em; }"+
       ".jspsych-survey-likert-opt-label { line-height: 1.1em; color: #444; }"+
-      ".jspsych-survey-likert-opts:before { content: ''; position:relative; top:11px; /*left:9.5%;*/ display:block; backgroun-image: url('https://tanyarubi.github.io/MyExperiment/pics/kindpng_112325.png');background-color:#efefef; height:4px; width:100%; }"+
+      ".jspsych-survey-likert-opts:before { content: ''; position:relative; top:11px; /*left:9.5%;*/ display:block; background-image: url('https://tanyarubi.github.io/MyExperiment/pics/kindpng_112325.png');background-color:#efefef; height:4px; width:100%; }"+
       ".jspsych-survey-likert-opts:last-of-type { border-bottom: 0; }"+
       ".jspsych-survey-likert-opts li { display:inline-block; /*width:19%;*/ text-align:center; vertical-align: top; }"+
       ".jspsych-survey-likert-opts li input[type=radio] { display:block; position:relative; top:0; left:50%; margin-left:-6px; }"
