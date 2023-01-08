@@ -187,7 +187,7 @@ jsPsych.plugins["image-button-response"] = (function() {
       display_element.insertBefore(btngroup_div, canvas.nextElementSibling);
       // add prompt if there is one
       if (trial.prompt !== null) {
-        display_element.insertBefore(btngroup_div, trial.prompt);
+        display_element.insertAdjacentHTML('beforeend', trial.prompt);
       }
 
     } else {
